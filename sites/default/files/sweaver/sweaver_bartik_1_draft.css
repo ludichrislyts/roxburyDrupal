@@ -1,0 +1,46 @@
+a {
+  font-family: 'Palatino Linotype',Palatino,Serif;
+  background-color: #380438;
+  background-repeat: repeat;
+}
+
+#page-wrapper #page a {
+  background-color: #2b052b;
+  background-position: 100% 0%;
+}
+
+li {
+  font-weight: normal;
+  padding-top: 0px;
+  margin-top: 0px;
+  border-top-width: 11px;
+  border-right-width: 8px;
+  padding-bottom: 0px;
+  font-family: 'Trebuchet',Helvetica,Sans-Serif;
+  font-style: normal;
+  text-align: left;
+  background-color: #080608;
+  line-height: 1px;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+li a {
+  font-size: 19px;
+  font-family: Helvetica,Arial,Sans-Serif;
+  font-weight: bold;
+  margin-top: 6px;
+  margin-left: 12px;
+  margin-bottom: 0px;
+  margin-right: 4px;
+}
+
+h2 a {
+  color: #cedb11;
+  text-decoration: none;
+}
+
+#node-6 h2 {
+  color: #4f0e4f;
+}
+
