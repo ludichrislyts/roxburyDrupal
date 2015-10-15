@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Video Link Embed feature.
+ */
+
+include_once 'video_link_embed.features.inc';

@@ -218,10 +218,10 @@ $databases = array (
     'default' => 
     array (
       'database' => 'roxbury_database',
-      'username' => 'admin',
+      'username' => 'roxbury_admin',
       'password' => 'treehouse',
       'host' => '127.0.0.1',
-      'port' => '3306',
+      'port' => '8889',
       'driver' => 'mysql',
       'prefix' => '',
     ),
@@ -258,7 +258,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = 'aLslpUIg7by54AZcd_yQswrSUzvz2reK47uNFBeIVjs';
+$drupal_hash_salt = '15ZgHyp5pESlbWpSIbdfvFAplmG4LgjhJpdZ1ba8dpM';
 
 /**
  * Base URL (optional).
