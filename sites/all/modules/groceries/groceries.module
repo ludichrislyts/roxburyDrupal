@@ -13,34 +13,34 @@ function groceries_menu(){
 
 function show_groceries(){
     $groceries['Eggs'] = array(
-        'name' => 'Eggs',
+        // 'name' => 'Eggs',
         'price' => 1.99,
         'quantity' => 2,
     );
 
     $groceries['Gallon of Organic Milk'] = array(
-        'name' => 'Gallon of Organic Milk',
-        'price' => 5.00,
+        // 'name' => 'Gallon of Organic Milk',
+        'price' => 5.25,
         'quantity' => 1,
     );
 
     $groceries['Loaf of Dave\'s Killer Bread'] = array(
-        'name' => 'Loaf of Dave\'s Killer Bread',
+        // 'name' => 'Loaf of Dave\'s Killer Bread',
         'price' => 4.99,
         'quantity' => 2,
     );
 
     $list = "";
     $total = 0;
-    foreach($groceries as $item){
-        $name = $item['name'];
-        $price = $item['price'];
-        $quantity = $item['quantity'];
+    foreach($groceries as $key => $value){
+        $name = $key;
+        $price = $value['price'];
+        $quantity = $value['quantity'];
         $cost = $price * $quantity;
         $list .= "
                 <p>$name</p>
                     <ul>
-                        <li>Price: $price</li>
+                        <li>Price: $$price</li>
                         <li>Quantity: $quantity</li>
                     </ul>
                 <p>Item Cost: $$cost</p>
