@@ -1,0 +1,5 @@
+name = Groceries
+description = Keep track of a grocery list
+package = My First Modules
+core = 7.x
+files[] = groceries.module

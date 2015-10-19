@@ -1,0 +1,20 @@
+<?php
+
+function pet_menu(){
+    $items = array();
+    $items['pet'] = array(
+            'title' => 'Meet Osa',
+            'page callback' => 'osa_info',
+            'access callback' => TRUE,
+            'type' => MENU_NORMAL_ITEM,
+        );
+    return $items;
+}
+
+function osa_info(){
+    return '
+        <p>Meet Osa!</p>
+        <img style="transform:rotate(90deg); margin-top:10%; margin-bottom:25%" width="75%" src="sites/all/modules/pet/osa.jpg" /><br />
+        <a href="https://en.wikipedia.org/wiki/American_black_bear" target="blank">Learn more about Osa\'s brothers and sisters...</a>
+    ';
+}

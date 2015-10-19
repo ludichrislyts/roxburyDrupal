@@ -1,0 +1,53 @@
+<?php
+
+function groceries_menu(){
+    $items = array();
+    $items['groceries'] = array(
+            'title' => "Grocery List",
+            'page callback' => 'show_groceries',
+            'access callback' => TRUE,
+            'type' => MENU_NORMAL_ITEM,
+        );
+    return $items;
+}
+
+function show_groceries(){
+    $groceries['Eggs'] = array(
+        'name' => 'Eggs',
+        'price' => 1.99,
+        'quantity' => 2,
+    );
+
+    $groceries['Gallon of Organic Milk'] = array(
+        'name' => 'Gallon of Organic Milk',
+        'price' => 5.00,
+        'quantity' => 1,
+    );
+
+    $groceries['Loaf of Dave\'s Killer Bread'] = array(
+        'name' => 'Loaf of Dave\'s Killer Bread',
+        'price' => 4.99,
+        'quantity' => 2,
+    );
+
+    $list = "";
+    $total = 0;
+    foreach($groceries as $item){
+        $name = $item['name'];
+        $price = $item['price'];
+        $quantity = $item['quantity'];
+        $cost = $price * $quantity;
+        $list .= "
+                <p>$name</p>
+                    <ul>
+                        <li>Price: $price</li>
+                        <li>Quantity: $quantity</li>
+                    </ul>
+                <p>Item Cost: $$cost</p>
+            ";
+        $total += $cost;
+
+    }
+    $list .= "<p>Your total for this shopping trip is $$total.</p>";
+    return $list;
+}

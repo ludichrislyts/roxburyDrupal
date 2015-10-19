@@ -213,15 +213,15 @@
  * @endcode
  */
 $databases = array (
-  'default' => 
+  'default' =>
   array (
-    'default' => 
+    'default' =>
     array (
       'database' => 'roxbury_database',
-      'username' => 'admin',
+      'username' => 'roxbury_admin',
       'password' => 'treehouse',
-      'host' => '127.0.0.1',
-      'port' => '3306',
+      'host' => 'localhost',
+      'port' => '8889',
       'driver' => 'mysql',
       'prefix' => '',
     ),
