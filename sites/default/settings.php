@@ -218,10 +218,10 @@ $databases = array (
     'default' => 
     array (
       'database' => 'roxbury_database',
-      'username' => 'roxbury_admin',
+      'username' => 'admin',
       'password' => 'treehouse',
       'host' => '127.0.0.1',
-      'port' => '8889',
+      'port' => '3306',
       'driver' => 'mysql',
       'prefix' => '',
     ),
