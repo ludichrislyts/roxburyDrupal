@@ -1,0 +1,27 @@
+<?php
+// function comment_buddy_menu(){
+//   $items = array();
+//   $items['comment_comment'] = array(
+//         'title' => 'Confirm Comment',
+//         'page callback' => 'confirm_comment',
+//         'access callback' => TRUE,
+//         'type' => MENU_CALLBACK,
+//   );
+//   return $items;
+// }
+//
+// function confirm_comment(){
+//   return drupal_set_message("Comment comment");
+// }
+
+function comment_buddy_comment_insert(){
+  return drupal_set_message("Comment submitted");
+}
+
+function comment_buddy_comment_update(){
+  return drupal_set_message("Comment Edited");
+}
+
+function comment_buddy_comment_delete(){
+  return drupal_set_message("Comment Vanished");
+}

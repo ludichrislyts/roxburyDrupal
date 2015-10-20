@@ -1,0 +1,5 @@
+name = Comment Buddy
+description = gives a message to user when creating, editing, or deleting comments
+package = My First Modules
+core = 7.x
+files[] = comment_buddy.module
