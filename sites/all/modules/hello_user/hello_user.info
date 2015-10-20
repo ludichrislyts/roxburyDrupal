@@ -1,0 +1,5 @@
+name = Hello User
+description = Displays a success page when a user is created
+package = My First Modules
+core = 7.x
+files[] = hello_user.module

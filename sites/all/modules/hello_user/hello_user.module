@@ -1,0 +1,33 @@
+<?php
+function hello_user_menu(){
+  $items = array();
+  $items['success_message'] = array(
+        'title' => 'Success Message',
+        'page callback' => 'display_message',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function display_message(){
+  $admin = admin_check();
+  if($admin){
+    return '<h1>SUCCESS! You\'ve added a user to the fold!</h1>';
+  }else{
+    return '<h3>Thanks for subscribing!</h3>';
+  }
+}
+
+function admin_check(){
+  global $user;
+  if(in_array('administrator', $user->roles)){
+    return TRUE;
+  }else{
+    return FALSE;
+  }
+}
+
+function hello_user_user_insert(){
+  $_GET['destination'] = 'success_message';
+}
