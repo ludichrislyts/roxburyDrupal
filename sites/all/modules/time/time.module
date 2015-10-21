@@ -1,0 +1,58 @@
+<?php
+
+function time_menu(){
+    $items = array();
+    $items['time'] = array(
+        'title' => 'Time Angle',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('time_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+function time_form(){
+    $form = array();
+    $hours_options = array();
+    for($i = 1; $i < 13; $i++){
+        array_push($hours_options, $i);
+    }
+    $minutes_options = array();
+    for ($i = 0; $i < 60; $i++){
+        array_push($minutes_options, $i);
+    }
+
+    $form['hours_select'] = array(
+        '#title' => 'Hours',
+        '#type' => 'select',
+        '#description' => t('Enter The Hour'),
+        '#options' => $hours_options,
+    );
+    $form['minutes_select'] = array(
+        '#title' => 'Minutes',
+        '#type' => 'select',
+        '#description' => t('Enter Minutes'),
+        '#options' => $minutes_options,
+    );
+    $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => 'Calculate Angle',
+    );
+    return $form;
+}
+
+function time_form_submit($form, &$form_state){
+    $hours = $form_state['values']['hours_select'];
+    $minutes = $form_state['values']['minutes_select'];
+
+    $hour_degrees = $hours * 30 + ($minutes * .5);
+    $minute_degrees = $minutes * 6;
+    $angle = abs($minute_degrees - $hour_degrees);
+    $angle += 30;
+    if($angle > 180) {
+        $angle = 360 - $angle;
+    }
+    drupal_set_message("The clock angle is " . $angle . " degrees");
+
+}

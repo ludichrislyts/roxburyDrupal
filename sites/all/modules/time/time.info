@@ -1,0 +1,5 @@
+name = Time
+description = Tell the angle of hands on a clock
+package = My First Modules
+core = 7.x
+files[] = time.module
