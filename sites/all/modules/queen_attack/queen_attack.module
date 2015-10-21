@@ -1,7 +1,7 @@
 <?php
 
 function queen_attack_menu(){
-  $items = array();
+  // $items = array();
   $items['queen_attack'] = array(
         'title' => 'Queen, ATTACK!!',
         'page callback' => 'drupal_get_form',
@@ -13,8 +13,10 @@ function queen_attack_menu(){
 }
 
 function queen_attack_form(){
-  $form = array();
-  $options = array(1 =>'1',2 =>'2',3 => '3',4 => '4',5 => '5',6 => '6',7 => '7',8 => '8');
+  $options = array();
+  for($i = 1; $i < 9; $i++){
+    array_push($options, $i);
+  }
   $form['queen_X_location'] = array(
       '#title' => 'Queen X Coordinate',
       '#type' => 'select',
