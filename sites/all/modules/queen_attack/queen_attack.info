@@ -1,0 +1,5 @@
+name = Queen, ATTACK!!
+description = Takes two chess board coordinates and figures out if a queen could take the piece
+package = My First Modules
+core = 7.x
+files[] = queen_attack.module

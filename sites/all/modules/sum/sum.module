@@ -30,7 +30,7 @@ function sum_form(){
 		'#type' => 'textfield',
 		'#description' => t('Please enter a number to add to the starting number.'),
 	);
-	
+
 	$form['submit'] = array(
 		'#type' => 'submit',
 		'#value' => 'Calculate Sum'

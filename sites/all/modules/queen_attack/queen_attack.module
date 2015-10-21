@@ -1,0 +1,65 @@
+<?php
+
+function queen_attack_menu(){
+  $items = array();
+  $items['queen_attack'] = array(
+        'title' => 'Queen, ATTACK!!',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('queen_attack_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+function queen_attack_form(){
+  $form = array();
+  $options = array(1 =>'1',2 =>'2',3 => '3',4 => '4',5 => '5',6 => '6',7 => '7',8 => '8');
+  $form['queen_X_location'] = array(
+      '#title' => 'Queen X Coordinate',
+      '#type' => 'select',
+      '#description' => t('Please enter the X location of your Queen.'),
+      '#options' => $options,
+  );
+  $form['queen_Y_location'] = array(
+      '#title' => 'Queen Y Coordinate',
+      '#type' => 'select',
+      '#description' => t('Please enter the Y location of your Queen.'),
+      '#options' => $options,
+  );
+  $form['enemy_X_location'] = array(
+      '#title' => 'Enemy X Coordinate',
+      '#type' => 'select',
+      '#description' => t('Please enter the X location of your victim.'),
+      '#options' => $options,
+  );
+  $form['enemy_Y_location'] = array(
+      '#title' => 'Enemy Y Coordinate',
+      '#type' => 'select',
+      '#description' => t('Please enter the Y location of your victim.'),
+      '#options' => $options,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'ATTACK!!',
+  );
+  return $form;
+}
+function queen_attack_form_submit($form, &$form_state){
+  $queenX = $form_state['values']['queen_X_location'];
+  $queenY = $form_state['values']['queen_Y_location'];
+  $enemyX = $form_state['values']['enemy_X_location'];
+  $enemyY = $form_state['values']['enemy_Y_location'];
+
+  $differenceX = $queenX - $enemyX;
+  $differenceY = $queenY - $enemyY;
+  $isEqual = false;
+  if($differenceX == $differenceY){ $isEqual = true; }
+
+  if($queenX == $enemyX || $queenY == $enemyY || $isEqual){
+    drupal_set_message('Your attack was successful!');
+  }else{
+    drupal_set_message('Your enemy is well fortified. Attack failed.');
+  }
+}
