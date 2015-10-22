@@ -50,9 +50,9 @@ function letter_validate($element)
 {
     $temp = $element['#value'];
     $len = strlen($temp);
-    drupal_set_message($temp);
 
     if($len < 2){
+
         form_error($element, "Please enter a valid format");
 
     } else if($len == 2){
@@ -74,10 +74,18 @@ function letter_validate($element)
         }else if(strtolower($temp) != $temp){
             form_error($element, "Please enter a valid format");
         }
-    } // end if len > 2
+    }
+}
 
-
-    // if(strtoupper($temp) != $temp && strlen($temp) == 2){
-    //     form_error($element, "Please enter a valid format.");
-    // }
+function state_poll_form_submit($form, &$form_state)
+{
+    $state = $form_state['values']['state'];
+    $icecream = $form_state['values']['icecream'];
+    $_SESSION['poll_result'] = 'Thank you for your input. Your state is ' . $state . ', and your favorite ice cream is ' . $icecream . '.';
+    $form_state['redirect'] = 'state_poll_result';
+}
+function state_poll_result()
+{
+    $answer = $_SESSION['poll_result'];
+    return $answer;
 }
