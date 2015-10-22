@@ -1,0 +1,5 @@
+name = State Pall
+description = Poll a user for their favorite ice cream and log their state
+package = My First Modules
+core = 7.x
+files[] = state_poll.module
