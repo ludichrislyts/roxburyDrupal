@@ -67,7 +67,7 @@
 
     function triangle_validate_range($element)
     {
-        if ($element['#value'] <= 1){
+        if ($element['#value'] < 0){
             form_error($element, t('Number must be at least 1.'));
         }
     }
